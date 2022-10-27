@@ -91,6 +91,7 @@ table td.icon.crab{
       </tr>
      </tr>
     @endforeach
+    <a href="{{ route('guests.create', ['id' => $guest->id,]) }}">ユーザー登録</a>
     </tbody>
     </table>
     </div>
