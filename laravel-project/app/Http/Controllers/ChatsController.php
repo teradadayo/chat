@@ -16,12 +16,16 @@ class ChatsController extends Controller
     public function chats_all($guest_id)
     {
 
-        $chat = Chats::findByChoiceSelectJoinGuestsAll(
+            $chat = Chats::select(
             'guests.name',
             'chats.guest_id',
             'chats.message',
             'chats.created_at',
-        );
+        )
+
+        ->leftjoin('guests','guests.id','=','chats.guest_id')
+        ->latest()
+        ->get();
 
         // Log::debug($chat);
 
