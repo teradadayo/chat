@@ -27,7 +27,7 @@ class ChatsController extends Controller
         ->latest()
         ->get();
 
-        // Log::debug($chat);
+        Log::debug($chat);
 
 
         return view('chats/index', [
